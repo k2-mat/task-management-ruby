@@ -1,17 +1,10 @@
-<div id="<%= dom_id @task %>">
-  <p>
-    <strong>件名:</strong>
-    <%= @task.title %>
-  </p>
+<p style="color: green"><%= notice %></p>
 
-  <p>
-    <strong>内容:</strong>
-    <%= @task.body %>
-  </p>
-</div>
+<%= render @task %>
 
 <div>
-  <%= link_to "編集", edit_task_path(@task) %> |
-  <%= link_to "戻る", tasks_path %>
-  <%= button_to "削除", @task, method: :delete %>
+  <%= link_to "Edit this task", edit_task_path(@task) %> |
+  <%= link_to "Back to tasks", tasks_path %>
+
+  <%= button_to "Destroy this task", @task, method: :delete %>
 </div>
