@@ -1,0 +1,58 @@
+<h4 class="fw-bold">
+  <span>タスク</span>
+</h4>
+
+<div class="card shadow mt-3">
+  <div class="card-header">
+    <%= icon_with_text("search", "検索条件") %>
+  </div>
+
+  <div class="card-body">
+    <%= search_form_for @search do |f| %>
+      <div class="row g3 mb-3">
+        <div class="col-4 col-xl-2">
+          <%= f.label :title_cont, "件名", class: "form-label" %>
+          <%= f.search_field :title_cont, class: "form-control" %>
+        </div>
+        <div class="col-4 col-xl-2">
+          <%= f.label :body_cont, "内容", class: "form-label" %>
+          <%= f.search_field :body_cont, class: "form-control" %>
+        </div>
+        <div class="col-4 d-flex align-items-end">
+          <%= button_tag(icon_with_text("search", "検索"), class: "btn btn-primary me-1") %>
+          <%= link_to "リセット", tasks_path, class: "btn btn-outline-secondary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- 一覧 -->
+<div class="card shadow mt-3">
+  <div class="card-header">
+    <%= icon_with_text("table", "一覧") %>
+  </div>
+
+  <div class="card-body mx-3">
+    <div class="row py-2">
+      <div class="col-4 mt-auto">
+        <%= sort_link(@search, :title) %>
+      </div>
+      <div class="col-4 mt-auto">
+        <%= sort_link(@search, :body) %>
+      </div>
+      <div class="col-4 d-flex justify-content-end">
+        <%= link_to icon_with_text("plus-circle", "登録"),
+                    new_task_path,
+                    class: "btn btn-outline-primary"
+        %>
+      </div>
+    </div>
+
+    <%= render @tasks %>
+
+    <div class="d-flex justify-content-end mt-3">
+      <%= paginate @tasks %>
+    </div>
+  </div>
+</div>
