@@ -53,12 +53,11 @@
           <%= link_to icon_with_text("plus-circle", "登録"),
                       new_task_path,
                       class: "btn btn-outline-primary",
-                      data: { turbo_frame: "new_task" }
+                      data: { turbo_frame: "modal" }
           %>
         </div>
       </div>
 
-      <%= turbo_frame_tag "new_task" %>
       <div id="tasks">
         <%= render @tasks %>
       </div>
