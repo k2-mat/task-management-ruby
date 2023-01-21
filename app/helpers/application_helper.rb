@@ -1,9 +1,9 @@
 module ApplicationHelper
-  def sidebar_link_to(path, text)
+  def sidebar_link_to(path, text, method=:get)
     classes = %w[my-1 nav-link text-white]
     classes << "active" if current_page?(path)
 
-    link_to(path, class: classes) do
+    link_to(path, class: classes, data: { turbo_method: method }) do
       tag.span { text }
     end
   end
