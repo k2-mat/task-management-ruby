@@ -4,7 +4,7 @@ class TasksController < ApplicationController
 
   # GET /tasks
   def index
-    @search = Task.ransack(params[:q])
+    @search = current_user.tasks.ransack(params[:q])
     @search.sorts = 'id desc' if @search.sorts.empty?
     @tasks = @search.result.page(params[:page])
   end
@@ -15,7 +15,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
-    @task = Task.new
+    @task = current_user.tasks.build
   end
 
   # GET /tasks/1/edit
@@ -24,7 +24,7 @@ class TasksController < ApplicationController
 
   # POST /tasks
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.build(task_params)
 
     if @task.save
       flash.now.notice = "タスクを登録しました。"
@@ -51,7 +51,7 @@ class TasksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
-      @task = Task.find(params[:id])
+      @task = current_user.tasks.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

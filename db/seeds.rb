@@ -6,7 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Task.create (
+user = User.new({email: 'user@example.com', password: 'password'})
+user.skip_confirmation!
+user.save!
+
+user.tasks.create (
   [
     {title: 'タスク１', body: '内容１'},
     {title: 'タスク２', body: '内容２'},
@@ -17,6 +21,6 @@ Task.create (
     {title: 'タスク７', body: '内容７'},
     {title: 'タスク８', body: '内容８'},
     {title: 'タスク９', body: '内容９'},
-    {title: 'タスク１０', body: '内容１０'},
+    {title: 'タスク１０', body: '内容１０'}
   ]
 )
