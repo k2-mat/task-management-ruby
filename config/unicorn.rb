@@ -1,3 +1,4 @@
+$worker = 2
 $timeout = 30
 $app_dir = "/home/ec2-user/workspace/task-management-ruby"
 $listen  = File.expand_path 'tmp/sockets/unicorn.sock', $app_dir
