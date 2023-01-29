@@ -28,7 +28,7 @@ namespace :unicorn do
 
   def unicorn_pid
     begin
-      File.read("/home/ec2-user/workspace/task-management-ruby/tmp/pids/unicorn.pid").to_i
+      File.read("/var/www/task-management-ruby/tmp/pids/unicorn.pid").to_i
     rescue Errno::ENOENT
       raise "Unicorn doesn't seem to be running"
     end
