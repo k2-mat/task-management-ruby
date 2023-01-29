@@ -44,3 +44,10 @@ set :ssh_options, {
 
 set :rbenv_type, :user
 set :rbenv_ruby, '3.1.3'
+
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+end
