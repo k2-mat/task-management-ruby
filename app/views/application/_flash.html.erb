@@ -1,7 +1,7 @@
 <% if notice %>
   <div class="mb-2 toast hide border-primary" data-controller="toast">
     <div class="toast-header text-primary">
-      <strong class="me-auto"><%= icon_with_text("check-circle", "成功") %></strong>
+      <strong class="me-auto"><%= icon_with_text("check-circle", "OK") %></strong>
       <button class="btn-close" data-bs-dismiss="toast">
     </div>
     <div class="toast-body"><%= notice %></div>
@@ -10,7 +10,7 @@
 <% if alert %>
   <div class="mb-2 toast hide border-danger" data-controller="toast">
     <div class="toast-header text-danger">
-      <strong class="me-auto"><%= icon_with_text("exclamation-circle", "エラー") %></strong>
+      <strong class="me-auto"><%= icon_with_text("exclamation-circle", "Error") %></strong>
       <button class="btn-close" data-bs-dismiss="toast">
     </div>
     <div class="toast-body"><%= alert %></div>
