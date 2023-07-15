@@ -27,7 +27,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.build(task_params)
 
     if @task.save
-      flash.now.notice = "タスクを登録しました。"
+      flash.now.notice = "Successfully added."
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1
   def update
     if @task.update(task_params)
-      flash.now.notice = "タスクを更新しました。"
+      flash.now.notice = "Successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -45,7 +45,7 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   def destroy
     @task.destroy
-    flash.now.notice = "タスクを削除しました。"
+    flash.now.notice = "Successfully deleted."
   end
 
   private

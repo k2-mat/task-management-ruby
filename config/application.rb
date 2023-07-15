@@ -35,7 +35,7 @@ module TaskManagementRuby
 
     # タイムゾーンをTokyo（日本）にする
    config.time_zone = "Tokyo"
-   # デフォルトのロケールを日本にする
-   config.i18n.default_locale = :ja
+   # デフォルトのロケールを英語にする
+   config.i18n.default_locale = :en
   end
 end
