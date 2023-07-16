@@ -12,15 +12,15 @@ user.save!
 
 user.tasks.create (
   [
-    {title: 'タスク１', body: '内容１'},
-    {title: 'タスク２', body: '内容２'},
-    {title: 'タスク３', body: '内容３'},
-    {title: 'タスク４', body: '内容４'},
-    {title: 'タスク５', body: '内容５'},
-    {title: 'タスク６', body: '内容６'},
-    {title: 'タスク７', body: '内容７'},
-    {title: 'タスク８', body: '内容８'},
-    {title: 'タスク９', body: '内容９'},
-    {title: 'タスク１０', body: '内容１０'}
+    {title: 'title1', body: 'content1'},
+    {title: 'title2', body: 'content2'},
+    {title: 'title3', body: 'content3'},
+    {title: 'title4', body: 'content4'},
+    {title: 'title5', body: 'content5'},
+    {title: 'title6', body: 'content6'},
+    {title: 'title7', body: 'content7'},
+    {title: 'title8', body: 'content8'},
+    {title: 'title9', body: 'content9'},
+    {title: 'title10', body: 'content10'}
   ]
 )
